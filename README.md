@@ -32,7 +32,7 @@ A   @   185.199.111.153
 For the `www` subdomain, add:
 
 ```
-CNAME   www   jasoncatchpole.github.io
+CNAME   www   bitwise-ventures.github.io
 ```
 
 Then in the repo: **Settings → Pages** → set the custom domain to
