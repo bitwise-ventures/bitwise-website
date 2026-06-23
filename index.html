@@ -197,7 +197,10 @@
         <h2>Let's talk.</h2>
         <p class="body">Partnerships, ideas, or just curious what we're up to — drop us a line.</p>
         <div class="contact-row">
-          <a class="pill mono" href="mailto:info@bitwise.ventures">✉ info@bitwise.ventures</a>
+          <!-- Email assembled client-side to keep the raw address out of the
+               page source (reduces scraping by spam harvesters). Falls back to
+               a prompt to email us if JS is disabled. -->
+          <a class="pill mono" id="contact-email" href="#contact">✉ email us</a>
         </div>
       </div>
     </section>
@@ -210,6 +213,21 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Assemble the contact address from parts so it isn't a literal string in
+    // the HTML source. Bots that don't execute JS won't harvest it; humans get
+    // a normal clickable mailto with the address shown.
+    (function () {
+      var user = 'info', domain = 'bitwise' + '.' + 'ventures';
+      var addr = user + '@' + domain;
+      var el = document.getElementById('contact-email');
+      if (el) {
+        el.href = 'mailto:' + addr;
+        el.textContent = '✉ ' + addr;
+      }
+    })();
+  </script>
 </body>
 </html>
