@@ -126,6 +126,14 @@
     .features li { color: var(--muted); padding-left: 26px; position: relative; }
     .features li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
 
+    /* brewing gif */
+    .brewing {
+      margin: 4px 0 24px; max-width: 420px;
+      border: 1px solid var(--border); border-radius: 16px;
+      overflow: hidden; background: var(--panel);
+    }
+    .brewing img { display: block; width: 100%; height: auto; }
+
     /* contact */
     .contact-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
     .pill { display: inline-flex; align-items: center; gap: 8px; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; }
@@ -170,10 +178,12 @@
         <div class="section-label">About</div>
         <h2>A small studio, shipping real products.</h2>
         <p class="body">
-          We're a focused, independent product studio. Rather than chase every
-          trend, we pick a handful of hard problems where modern AI genuinely
-          changes what's possible — then design and build software that feels
-          considered, not bolted-on. Fewer products, shipped properly.
+          We're a focused, independent product studio building novel, in-house
+          products at the intersection of VR, AI, and cutting-edge computer
+          science. Rather than chase every trend, we pick a handful of hard
+          problems where these technologies genuinely change what's possible —
+          then design and build software that feels considered, not bolted-on.
+          Fewer products, shipped properly.
         </p>
       </div>
     </section>
@@ -181,11 +191,17 @@
     <section id="now">
       <div class="wrap">
         <div class="section-label">Currently</div>
-        <h2>Heads-down on our first product.</h2>
+        <h2>Something's brewing.</h2>
+        <figure class="brewing">
+          <picture>
+            <source srcset="assets/mixing.webp" type="image/webp" />
+            <img src="assets/mixing.gif" alt="An avatar mixing potions over a bubbling cauldron." loading="lazy" />
+          </picture>
+        </figure>
         <p class="body">
-          We're in the early stages of building something we're not quite ready
-          to talk about — an AI-native product we think people will genuinely
-          love. If you'd like to be among the first to hear when it's ready,
+          We've got some great stuff brewing that we aren't quite ready to share
+          yet — products we think people will genuinely love. If you'd like to be
+          among the first to hear when they're ready,
           <a href="#contact">drop us a line</a>.
         </p>
       </div>
